@@ -8,7 +8,7 @@
   <!-- Bootstrap CSS CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-  <!-- 自定义 CSS：白底 + 更大间距 + 图片更小 + 原比例 + 无框无阴影 -->
+  <!-- 自定义 CSS：白底 + 更小间距 + 图片更大 + 直角 + 无框无阴影 -->
   <style>
     body {
       margin: 0;
@@ -53,13 +53,13 @@
       color: #555 !important;
     }
 
-    /* 网格容器：更大留白 + 垂直居中 */
+    /* 网格容器：间距缩小，图片更大 */
     .album {
-      padding: 12rem 8% 8rem;  /* 顶部/两侧留白加大，像 Ian */
+      padding: 10rem 5% 6rem;  /* 顶部留白保持呼吸感 */
       background: #fff;
       min-height: 100vh;
       display: flex;
-      align-items: center;  /* 垂直居中整行 */
+      align-items: center;
     }
 
     .row {
@@ -68,32 +68,34 @@
     }
 
     .col {
-      padding: 4rem 2rem;  /* 每张图周围更大间距 */
+      padding: 2rem 1rem;  /* 间距缩小 */
     }
 
     .card {
       background: transparent;
       border: none;
       box-shadow: none;
-      transition: transform 0.5s ease;
+      transition: transform 0.4s ease;
       cursor: pointer;
+      border-radius: 0;  /* 直角 */
     }
 
     .card:hover {
-      transform: scale(1.04);
+      transform: scale(1.03);
     }
 
     .card-img-top {
-      width: 80%;            /* 图片再小一点（80% 宽度，留更多白边） */
-      max-width: 600px;      /* 最大限制，避免太大 */
+      width: 90%;            /* 图片更大 */
+      max-width: 700px;      /* 最大宽度加大 */
       height: auto;
       object-fit: contain;
       display: block;
-      margin: 0 auto;        /* 水平居中 */
+      margin: 0 auto;
+      border-radius: 0;      /* 图片直角 */
     }
 
     .card-body {
-      padding: 1.5rem 0 0;
+      padding: 1rem 0 0;
       text-align: center;
     }
 
@@ -101,7 +103,7 @@
       color: #000;
       font-weight: 300;
       font-size: 1.2rem;
-      margin: 1rem 0 0.5rem;
+      margin: 0.75rem 0 0.5rem;
       letter-spacing: 0.05em;
     }
 
@@ -113,9 +115,9 @@
     }
 
     @media (max-width: 768px) {
-      .album { padding: 10rem 5% 6rem; }
-      .col { padding: 3rem 1rem; }
-      .card-img-top { width: 90%; max-width: 400px; }
+      .album { padding: 8rem 5% 4rem; }
+      .col { padding: 1.5rem 0.8rem; }
+      .card-img-top { width: 95%; max-width: 450px; }
       .card-title { font-size: 1.1rem; }
       .card-text { font-size: 0.9rem; }
     }
