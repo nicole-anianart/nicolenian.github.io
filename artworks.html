@@ -5,120 +5,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ARTWORKS - Nicole Nian</title>
 
-  <!-- Bootstrap CSS CDN（仅用于导航栏和响应式） -->
+  <!-- Bootstrap CSS CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-  <!-- 自定义 CSS：完全模仿 Ian Rayer-Smith 高级极简风格 -->
+  <!-- 自定义 CSS：黑底 + Album 示例风格 + 细字体 -->
   <style>
     body {
       margin: 0;
       padding: 0;
-      background-color: #000;
+      background-color: #000;          /* 黑底 */
       color: #e0e0e0;
       font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-weight: 300;          /* 细字体，Ian 风格 */
-      letter-spacing: 0.05em;
-      line-height: 1.5;
-      overflow-x: hidden;
+      font-weight: 300;                /* 细字体 */
+      line-height: 1.6;
     }
 
-    /* 导航栏：固定右上角，极简半透明 */
+    /* 导航栏：与首页一致 */
     .navbar {
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      padding: 1.2rem 0;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 1rem 0;
     }
 
     .navbar-brand {
-      font-size: 1.35rem;
+      font-size: 1.4rem;
       font-weight: 300;
       color: #fff !important;
-      padding-left: 3rem;
-      letter-spacing: 0.15em;
+      padding-left: 2rem;
     }
 
     .navbar-nav .nav-link {
       color: #fff !important;
       font-weight: 300;
       font-size: 0.95rem;
-      margin-left: 2.5rem;
-      letter-spacing: 0.08em;
-      transition: color 0.4s ease;
+      margin-left: 1.5rem;
     }
 
-    .nav-link:hover,
-    .nav-link.active {
+    .nav-link:hover {
       color: #ccc !important;
     }
 
-    /* 作品网格容器：高级留白 + 大图居中 */
-    .gallery {
-      padding: 12rem 5% 8rem;  /* 大量顶部留白，像 Ian */
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 6rem;               /* 大间距，呼吸感 */
+    /* Bootstrap Album 网格容器（原汁原味模仿） */
+    .album {
+      padding: 8rem 2rem 4rem;  /* 避开导航栏 */
       background: #000;
     }
 
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
+    .card {
+      background: #1a1a1a;
+      border: none;
+      transition: transform 0.3s ease;
     }
 
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: transform 0.6s ease, opacity 0.6s ease;
+    .card:hover {
+      transform: scale(1.02);
     }
 
-    .gallery-item:hover img {
-      transform: scale(1.04);  /* 轻微放大，优雅 */
-      opacity: 0.92;
+    .card-img-top {
+      height: 225px;
+      object-fit: cover;
     }
 
-    /* 作品标题（极简，只在悬停显示或底部小字） */
-    .gallery-item .title {
-      position: absolute;
-      bottom: 1.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      color: rgba(255,255,255,0.7);
-      font-size: 0.9rem;
+    .card-title {
+      color: #fff;
       font-weight: 300;
-      letter-spacing: 0.1em;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      pointer-events: none;
+      font-size: 1.1rem;
     }
 
-    .gallery-item:hover .title {
-      opacity: 1;
+    .card-text {
+      color: #ccc;
+      font-weight: 300;
+      font-size: 0.9rem;
     }
 
-    /* 响应式：手机上间距缩小 */
+    .btn-outline-secondary {
+      font-weight: 300;
+    }
+
+    /* 响应式调整 */
     @media (max-width: 768px) {
-      .gallery {
-        padding: 8rem 3% 6rem;
-        gap: 4rem;
-        grid-template-columns: 1fr;
-      }
-
-      .navbar-brand {
-        padding-left: 1.5rem;
-        font-size: 1.2rem;
-      }
-
-      .navbar-nav .nav-link {
-        margin-left: 1.2rem;
-        font-size: 0.9rem;
-      }
+      .album { padding-top: 6rem; }
+      .card-img-top { height: 200px; }
     }
   </style>
 </head>
@@ -144,32 +116,43 @@
     </div>
   </nav>
 
-  <!-- ARTWORKS 页面：高级网格（像 Ian） -->
-  <main class="gallery">
-    <!-- 你的第1幅画 -->
-    <div class="gallery-item">
-      <img src="images/painting1.jpg" alt="Inner Depths 1">
-      <div class="title">Inner Depths 1</div>
-    </div>
+  <!-- ARTWORKS：Bootstrap Album 示例风格网格 -->
+  <main class="album">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        
+        <!-- 你的第1幅画 -->
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="images/painting1.jpg" class="card-img-top" alt="Inner Depths 1">
+            <div class="card-body">
+              <p class="card-text">Inner Depths 1. Oil on canvas, 100x150cm, 2025. Abstract heart-image layered from inner vitality.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-light">View</button>
+                </div>
+                <small class="text-body-secondary">2025</small>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <!-- 第2幅 -->
-    <div class="gallery-item">
-      <img src="images/painting2.jpg" alt="Inner Depths 2">
-      <div class="title">Inner Depths 2</div>
-    </div>
+        <!-- 第2幅（复制修改） -->
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="images/painting2.jpg" class="card-img-top" alt="Inner Depths 2">
+            <div class="card-body">
+              <p class="card-text">Inner Depths 2. Oil on canvas, 120x180cm, 2025. Emerged from meditative automatism.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-light">View</button>
+                </div>
+                <small class="text-body-secondary">2025</small>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <!-- 第3幅到第10幅：复制上面结构，改文件名和 alt -->
-    <div class="gallery-item">
-      <img src="images/painting3.jpg" alt="Inner Depths 3">
-      <div class="title">Inner Depths 3</div>
-    </div>
-
-    <!-- ... 继续复制到 painting10.jpg ... -->
-    <!-- 你可以复制 <div class="gallery-item">...</div> 块 10 次，改 src 和 alt -->
-
-  </main>
-
-  <!-- Bootstrap JS（仅用于导航栏折叠） -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-</html>
+        <!-- 第3幅到第10幅：继续复制上面 <div class="col">...</div> 块，改 src、alt、p.card-text -->
+        <!-- 示例第3幅 -->
+        <div class="
