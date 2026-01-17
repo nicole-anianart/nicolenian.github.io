@@ -55,7 +55,7 @@
 
     /* 网格容器：更大留白 + 垂直居中 */
     .album {
-      padding: 12rem 8% 8rem;  /* 顶部/两侧更大留白 */
+      padding: 12rem 8% 8rem;
       background: #fff;
       min-height: 100vh;
       display: flex;
@@ -68,7 +68,7 @@
     }
 
     .col {
-      padding: 4rem 2rem;  /* 每张图周围更大间距 */
+      padding: 4rem 2rem;
     }
 
     .card {
@@ -85,14 +85,20 @@
     }
 
     .card-img-top {
-      width: 85% !important;         /* 图片再小一点，留白更多 */
+      width: 85% !important;
       max-width: 650px !important;
       height: auto !important;
       object-fit: contain !important;
       background: transparent !important;
-      border-radius: 0 !important;   /* 强制直角 */
+      border-radius: 0 !important;
       display: block;
       margin: 0 auto;
+    }
+
+    /* 特殊类：让 painting10 单独变大 */
+    .special-large {
+      width: 100% !important;
+      max-width: none !important;
     }
 
     .card-body {
@@ -266,11 +272,11 @@
           </a>
         </div>
 
-        <!-- 第10幅 -->
+        <!-- 第10幅：单独变大 -->
         <div class="col">
           <a href="painting10.html" class="text-decoration-none">
             <div class="card">
-              <img src="images/painting10.jpg" class="card-img-top" alt="Inner Depths 10">
+              <img src="images/painting10.jpg" class="card-img-top special-large" alt="Inner Depths 10">
               <div class="card-body">
                 <h5 class="card-title">Inner Depths 10</h5>
                 <p class="card-text">Oil on canvas, 95x135cm, 2025</p>
