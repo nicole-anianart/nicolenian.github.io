@@ -8,7 +8,7 @@
   <!-- Bootstrap CSS CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-  <!-- 自定义 CSS：白底 + 画间距更大 + 两边空白减小 + 标题颜色大小统一 -->
+  <!-- 自定义 CSS：白底 + 画间距更大 + 两行行距缩小 + 字体再小一点 -->
   <style>
     body {
       margin: 0;
@@ -53,9 +53,9 @@
       color: #555 !important;
     }
 
-    /* 网格容器：两边空白减小 + 垂直居中 */
+    /* 网格容器：更大留白 + 垂直居中 */
     .album {
-      padding: 10rem 4% 6rem; /* 左右 padding 减到 4%，两边空白变小 */
+      padding: 12rem 4% 8rem; /* 左右空白保持适中 */
       background: #fff;
       min-height: 100vh;
       display: flex;
@@ -68,7 +68,7 @@
     }
 
     .col {
-      padding: 4rem 3rem; /* 每张画左右 padding 加大，让画彼此更分开 */
+      padding: 4rem 3.5rem; /* 左右 padding 加大，让画彼此更分开 */
     }
 
     .card {
@@ -96,25 +96,25 @@
     }
 
     .card-body {
-      padding: 1.2rem 0 0;
+      padding: 0.8rem 0 0; /* 顶部 padding 缩小，让两行更紧凑 */
       text-align: center;
     }
 
     .card-title,
     .card-text {
-      color: #666;              /* 标题和描述统一颜色 */
+      color: #666;
       font-weight: 300;
-      font-size: 0.9rem;        /* 标题和描述统一大小 */
-      margin: 0.5rem 0;
+      font-size: 0.85rem; /* 字体再小一点点 */
+      margin: 0.3rem 0; /* 两行间距缩小 */
       letter-spacing: 0.03em;
     }
 
     @media (max-width: 768px) {
-      .album { padding: 8rem 4% 4rem; }
+      .album { padding: 9rem 4% 5rem; }
       .col { padding: 3rem 2rem; }
       .card-img-top { width: 95% !important; max-width: 500px !important; }
       .card-title,
-      .card-text { font-size: 0.85rem; }
+      .card-text { font-size: 0.8rem; margin: 0.25rem 0; }
     }
   </style>
 </head>
@@ -141,7 +141,7 @@
   <!-- ARTWORKS 网格 -->
   <main class="album">
     <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-6"> <!-- g-6：画间距更大 -->
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-6">
 
         <!-- 第1幅 -->
         <div class="col">
