@@ -67,16 +67,16 @@
     }
 
     .text-column {
-      flex: 1;
+      flex: 1.2;
     }
 
     .photo-column {
-      flex: 1;
+      flex: 0.8;
       text-align: center;
     }
 
     .statement-title {
-      font-size: 1.5rem;      /* 标题再小一点，比正文大一点点 */
+      font-size: 1.5rem;
       font-weight: 300;
       margin-bottom: 2.5rem;
       letter-spacing: 0.06em;
@@ -84,7 +84,7 @@
     }
 
     .statement-text {
-      font-size: 1.0rem;      /* 正文字体再小一点 */
+      font-size: 1.0rem;
       line-height: 1.85;
       color: #222;
     }
@@ -94,10 +94,12 @@
     }
 
     .photo-container img {
-      max-width: 100%;
+      max-width: 380px;          /* 照片调小，像 Ian 一样精致 */
       height: auto;
       border-radius: 0;
       box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      display: block;
+      margin: 0 auto;
     }
 
     .back-link {
@@ -124,6 +126,9 @@
       }
       .statement-text {
         font-size: 0.95rem;
+      }
+      .photo-container img {
+        max-width: 300px;     /* 手机上再小一点 */
       }
       .navbar-brand {
         font-size: 1.3rem;
@@ -176,7 +181,7 @@
 
       <div class="photo-column">
         <!-- 替换成你的照片路径 -->
-        <img src="images/nicole-portrait.jpg" alt="Nicole Nian Portrait" class="photo-container">
+        <img src="images/your-portrait.jpg" alt="Nicole Nian Portrait">
       </div>
     </div>
   </div>
