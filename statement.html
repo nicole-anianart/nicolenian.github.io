@@ -3,15 +3,133 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>STATEMENT - Nicole Nian</title> <!-- 这里改成单数 -->
+  <title>STATEMENT - Nicole Nian</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
-    /* 样式部分完全不变，省略以节省空间 */
-    /* ... 你的原样式代码 ... */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #333;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      padding: 1.2rem 0;
+    }
+
+    .navbar-brand {
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: #000 !important;
+      padding-left: 2rem;
+      letter-spacing: 0.1em;
+    }
+
+    .navbar-nav .nav-link {
+      color: #000 !important;
+      font-weight: 300;
+      font-size: 0.95rem;
+      margin-left: 2rem;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #555 !important;
+    }
+
+    .statement-wrapper {
+      min-height: 100vh;
+      padding: 12rem 4% 8rem;
+      display: flex;
+      align-items: center;
+      background: #fff;
+    }
+
+    .statement-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 6rem;
+      align-items: flex-start;
+    }
+
+    .text-column {
+      flex: 1;
+    }
+
+    .photo-column {
+      flex: 1;
+      text-align: center;
+    }
+
+    .statement-title {
+      font-size: 1.45rem;
+      font-weight: 300;
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.06em;
+      color: #000;
+      text-align: left;
+    }
+
+    .statement-text {
+      font-size: 0.85rem;
+      line-height: 1.9;
+      color: #666;
+    }
+
+    .statement-text p {
+      margin-bottom: 1.8rem;
+    }
+
+    .photo-container img {
+      max-width: 160px !important;
+      width: 100% !important;
+      height: auto !important;
+      border-radius: 0;
+      box-shadow: none !important;
+      display: block;
+      margin: 2rem auto 0;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #666;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color 0.3s;
+    }
+
+    .back-link:hover {
+      color: #000;
+    }
+
+    @media (max-width: 992px) {
+      .statement-wrapper { padding: 10rem 4% 6rem; }
+      .statement-content { flex-direction: column; gap: 4rem; }
+      .statement-title { font-size: 1.35rem; }
+      .statement-text { font-size: 0.82rem; }
+      .photo-container img { max-width: 140px !important; }
+      .navbar-brand { font-size: 1.3rem; padding-left: 1.5rem; }
+      .nav-link { font-size: 0.9rem; margin-left: 1.4rem; }
+    }
   </style>
 </head>
+
 <body>
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
@@ -22,7 +140,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="artworks.html">ARTWORKS</a></li>
-          <li class="nav-item"><a class="nav-link active" href="statements.html">STATEMENT</a></li> <!-- 这里改成单数 -->
+          <li class="nav-item"><a class="nav-link active" href="statements.html">STATEMENT</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
           <li class="nav-item"><a class="nav-link" href="bio.html">BIO</a></li>
         </ul>
@@ -33,13 +151,16 @@
   <div class="statement-wrapper">
     <div class="statement-content">
       <div class="text-column">
-        <h1 class="statement-title">STATEMENT</h1> <!-- 这里也改成单数 -->
+        <h1 class="statement-title">STATEMENT</h1>
 
         <div class="statement-text">
-          <p>My work emerges from a place of inner silence and unpremeditated response. Each painting begins without preconception—through meditative automatism, layers of color and form arise as heart-images from the unconscious.</p>
-          <p>The process is one of surrender: allowing vitality to surface naturally, as it does in nature. Translucent veils overlap, revealing and concealing, echoing the fleeting rhythms of life and the quiet depth beneath.</p>
-          <p>These are not illustrations of emotion, but direct traces of inner movement—fragments of something felt but not named. I seek to hold the tension between presence and absence, light and shadow, the seen and the unseen.</p>
-          <p>Ultimately, the paintings invite the viewer to pause, to meet their own inner depths in the space between seeing and feeling.</p>
+          <p>I gaze at this patch of ground. In winter, it changes so little day after day. At ten in the morning, at two in the afternoon, the direction of the tree-branch shadows remains the same as yesterday and the day before. A bird chases another across my view, the nearest branches sway, while the distant edge of the woods seems to drift and float. All these tiny shifts are gathered together, and as I watch, my heart ripples gently. Is this, then, eternity?</p>
+
+          <p>A person who passed by earlier returns and sits here for a moment to rest, lost in thought. While my heart sways with the branches and drifts among the shifting play of light and shadow as clouds moved overhead, that person left. Not long after, another came, or perhaps several together.</p>
+
+          <p>I paint out the ripples that arise in my heart at that moment. For a certain period, I know one particular feeling is especially intense, so every day after that I return to feel it again. With each added brushstroke, the depth of that sensation grows alongside the painting—gradually bringing into fullness and clarity what I had not been able to see or name before.</p>
+
+          <p>To me, the language of the heart is abstract. Its ever-changing surge of energy stirs me, again and again. I long to unfold my entire heart to the viewer, to create a space open and free, a place of quiet intimacy where one may also touch the pulse of one’s own spirit.</p>
         </div>
 
         <a href="artworks.html" class="back-link">← Back to Artworks</a>
